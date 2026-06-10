@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="joke-generator">
+            <!-- Header -->
+            <div class="header">
+                <h1>🤣 Joke Generator</h1>
+                <p class="tagline">Get a laugh with our random joke generator</p>
+            </div>
+
+            <!-- Category Selection -->
+            <div class="category-section">
+                <label for="categorySelect">Choose a category:</label>
+                <select id="categorySelect" class="category-select">
+                    <option value="Any">Any</option>
+                    <option value="General">General</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Knock-knock">Knock-knock</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+
+            <!-- Type Selection -->
+            <div class="type-section">
+                <label>Joke type:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="jokeType" value="any" checked>
+                        <span>Any</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="jokeType" value="single">
+                        <span>Single</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="jokeType" value="twopart">
+                        <span>Two-part</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Loading a joke for you...</p>
+            </div>
+
+            <!-- Joke Display -->
+            <div id="jokeContainer" class="joke-container hidden">
+                <div class="joke-card">
+                    <div id="jokeContent" class="joke-content"></div>
+                    
+                    <!-- For Two-part Jokes -->
+                    <button id="showDeliveryBtn" class="show-delivery-btn hidden">
+                        Show Punchline 😄
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Buttons Section -->
+            <div class="buttons-section">
+                <button id="getJokeBtn" class="get-joke-btn">Get Random Joke</button>
+                <button id="copyJokeBtn" class="copy-joke-btn hidden">📋 Copy Joke</button>
+                <button id="shareJokeBtn" class="share-joke-btn hidden">📤 Share</button>
+            </div>
+
+            <!-- Joke History -->
+            <div class="history-section">
+                <div class="history-header">
+                    <h3>📝 Recent Jokes</h3>
+                    <button id="clearHistoryBtn" class="clear-history-btn">Clear</button>
+                </div>
+                <ul id="jokeHistory" class="joke-history"></ul>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <p class="stat-label">Jokes Loaded</p>
+                    <p id="jokeCount" class="stat-value">0</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Favorites</p>
+                    <p id="favoriteCount" class="stat-value">0</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Shares</p>
+                    <p id="shareCount" class="stat-value">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
